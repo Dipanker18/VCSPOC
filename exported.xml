@@ -44,7 +44,7 @@ Collections "3947277"
 
 Exported by database exporter.
 -->
-<STEP-ProductInformation ExportTime="2025-04-29 08:39:51" ExportContext="Context1" ContextID="Context1" WorkspaceID="Main" UseContextLocale="false">
+<STEP-ProductInformation ExportTime="2025-04-29 08:42:42" ExportContext="Context1" ContextID="Context1" WorkspaceID="Main" UseContextLocale="false">
 
   <DimensionList/>
 
@@ -53,6 +53,16 @@ Exported by database exporter.
   <CrossReferenceTypes/>
 
   <ListOfValuesGroupList/>
+
+  <AttributeList>
+
+    <Attribute ID="AT_GITHUB_Test" MultiValued="false" ProductMode="Normal" FullTextIndexed="false" ExternallyMaintained="false" Derived="false" Selected="true" Referenced="true" Mandatory="false">
+      <Name>AT_GITHUB_Test123</Name>
+      <Validation BaseType="text" MinValue="" MaxValue="" MaxLength="100" InputMask=""/>
+      <AttributeGroupLink AttributeGroupID="NG-POC"/>
+    </Attribute>
+
+  </AttributeList>
 
   <ActionSetList/>
 </STEP-ProductInformation>
