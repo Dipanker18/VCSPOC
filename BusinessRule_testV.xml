@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<STEP-ProductInformation ContextID="Context1" WorkspaceID="Main" UseContextLocale="false">
+    <BusinessRules>
+        <BusinessRule ID="testV" Scope="Global" Type="Action" RunPrivileged="true" Selected="true" Referenced="true"><!-- Definition:
+Action #1 (JavaScriptBusinessActionWithBinds):
+<config>
+  <bindings>
+    <binding alias="node" type="Node" contract="CurrentObjectBindContract"/>
+    <binding alias="step" type="Manager" contract="ManagerBindContract"/>
+  </bindings>
+  <messages/>
+  <javaScript>
+var contextHashSet = new java.util.HashSet();
+var currentContext = step.getCurrentContext().getID();
+var allContexts = step.getContextHome().getContexts().iterator();
+while (allContexts.hasNext()) {
+    var eachContext = allContexts.next();
+    var eachContextID = eachContext.getID().toString();
+    if(eachContextID.contains(currentContext)){
+        contextHashSet.add(eachContextID);
+    }
+}// Changes for INC14782712 end
+
+
+
+var contextHashSetItr = contextHashSet.iterator();
+while (contextHashSetItr.hasNext()) {
+    var contextID = contextHashSetItr.next();
+   log.info("IDs of Current and Sub Contexts " + contextID);
+    step.executeInContext(contextID, function(step) {
+        var contextNode = step.getObjectFromOtherManager(node);
+//log.info(contextNode.getValue("a_mm_LongName").getSimpleValue());
+        if ((contextNode.getValue("a_mm_LongName").getSimpleValue() == null) || (contextNode.getValue("a_mm_LongName").getSimpleValue() == ""))
+            contextNode.getValue("a_mm_LongName").setSimpleValue(longName);
+           getdatacontainerattrvalue(node,"dc_mm_RFMMultiLanguageTable","a_mm_LongName",contextNode);
+
+        if ((contextNode.getValue("a_mm_CSOName").getSimpleValue() == null) || (contextNode.getValue("a_mm_CSOName").getSimpleValue() == ""))
+            getdatacontainerattrvalue(node,"dc_mm_RFMMultiLanguageTable","a_mm_CSOName",contextNode);
+    });
+}
+
+//getdatacontainerattrvalue(node,"dc_mm_RFMMultiLanguageTable","a_mm_LongName")
+
+function getdatacontainerattrvalue(node,datacontainerid,datacontainerattr,contextNode){
+	var dataContainer = node.getDataContainerByTypeID("dc_mm_RFMMultiLanguageTable");                
+	var dataContainerObjs = dataContainer.getDataContainers().toArray();
+	
+     for (var k = 0; k < dataContainerObjs.length; k++) {
+     	var dataContainerObj = dataContainerObjs[k].getDataContainerObject();
+		var longname = dataContainerObj.getValue("a_mm_LongName").getSimpleValue();
+		var csoname = dataContainerObj.getValue("a_mm_CSOName").getSimpleValue();
+		//log.info(gridLevelPortionCost);
+		//log.info(longname);
+		if(longname != null){
+		contextNode.getValue("a_mm_LongName").setSimpleValue(longname);
+		}
+		if(csoname != null){
+		contextNode.getValue("a_mm_CSOName").setSimpleValue(csoname);
+		}
+}
+}
+  </javaScript>
+</config> -->
+            <SetupGroupLink SetupGroupID="GlobalBusinessRulesRoot"></SetupGroupLink>
+            <Name>testV</Name>
+            <OnApprove ApproveSetup="Never"></OnApprove>
+            <Configuration>H4sIAAAAAAAAALVXW1PbOBR+xr9CzQNjD1m7dHamnUkCA84ymx0CTEPbh85ORtiKo1aRUklOYSn/fY8uNnYSCuxS8xD76DvfueoILVlZUD7FyyWjRE3pbJoJPqNFX4FAHyzdspMN+ofXC4ZWRCoq+KCzH7/uIMIzkVNeDDofLk9+e9c5PAj6x6WinCj1vmTkIECoFlxYOtRcd6LRcND5C6/wJJN0qav1o0yDoU9Uz48pz1XHcAHbBZZ4QTS44QRNETJMDo0ub5Zk0PkCtDHDvIgnWoKjnYNdpnutSHa/lUL3IBz3ch+T+7aBudfD3UL3AkNgbIzx0n4jVEkQZEpLnGlww2mkpZSE6/OrLyTTBpJ6hLd1xChWHstFTry4DihlWNXrJWPuLXnU7hhzXBD5iEWlyfI5Fo29pBl6P6n1HijGH1IKOYZqgju/uiinIsOM/oOvGPEWL8liybAmxyXPGUme6PN9Kz7s8ApLm3Vyrf/Eaj4hGg0QJ9+RhZaastjLw6gXWLRrhdQpAdpkPy6ITlsLYWRko2GlhhnzK6qp402LBXEKFQa+KMSBtZCG4fucMoLCBkk8x+rM2onQrY3fWCE4m9971oRzi+1tQ46GgG18V47HWrg0VXp0FrbUYpM5TLkK20mJoltfEbSW3BjneZvDU98Fd0mC0jnUhig0E1DBs3T/97fv3rzdfwNdkwfwbBZrpCX4vmZjS+I2tLanL2skZFOlkUImipjymQhd746GCokZ8h2AMGzlSXmF6oL75t+7N+DDtn1ArklWajLiVevUqC6aldyOz9AgK1fX3D2DgdPoKTekTqRYnOs5kX6EhGYsgdUkqX1vqBu9j5iVxAeEp4vF9FTw4gz2kxPZ9pxQ2IjEISMfg+sMFP5vPjSArQejKkI/fqAXYXNrHhHV3jb68sn0qk3P/HIjB/AAUY419tvCdKGWK4s32e86rjwz/O9PxuOSaXoKHV+aEWfGnQN0H3Sj2/AaLD8v/enk/OWy/wSynyT/5fPU8mctTXa+wO9dAN3/q0sUBUG1Zx8Ls7VG8+4GthXHbbBj9rwBpRXInFW+QsOm/PjGnHcww58YTtRDa88WYzBXzNHVkm1YVvbYOJIS35hRuePKbuZ5aAi/AsHrHvyYc36TPmaEF3oOgL29etht9WTdEaP9+evfG/64YWhdsTxm33Io1hb9/zRlKt5MiefQPrJ9DGtjUBfQHadkRdiFkKaxUqH0OqYKzMrhoK4DfeW3NfTPzgsMvdrGnbNTBf4cM2vRr1nxjN6I+dv4V68hsLeHftK+m8DtJWlfX/xN6F+DpwwKKQ0AAA==</Configuration>
+            <ValidObjectTypes AllObjectTypesValid="true"></ValidObjectTypes>
+        </BusinessRule>
+    </BusinessRules>
+</STEP-ProductInformation>
