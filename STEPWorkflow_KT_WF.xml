@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<STEP-ProductInformation ContextID="Context1" WorkspaceID="Main" UseContextLocale="false">
+    <STEPWorkflows>
+        <STEPWorkflow ID="KT_WF" Selected="true" Referenced="true"><!-- Definition:
+<scxml name="KT_WF" initial="Start" version="0.9">
+  <assignee id="$current" type="user"/>
+  <editorLayout>   node-size-and-position x=0.0 y=0.0 w=648.0 h=579.0  </editorLayout>
+  <final id="End" name="End" discontinued="false">
+    <assignee id="$current" type="user"/>
+    <editorLayout>   node-size-and-position x=260.0 y=350.0 w=100.0 h=25.0  </editorLayout>
+    <onentry businessactionid="acn-c413ebd1-da43-426f-8618-0dbca077fd15"/>
+  </final>
+  <state id="Approval_Step_1" name="Approval Step 1" discontinued="false">
+    <transition businessactionid="acn-dee4241d-17fc-42e7-b6a7-b26b967e4015" businessconditionid="con-198d7c94-d346-4f94-ab62-864ebafd4d68" event="Approve" target="Approval_Step_2"/>
+    <transition businessactionid="acn-bdace898-f8f0-4ef0-ba34-950d25c981e3" businessconditionid="AS_RBC" event="Reject" target="End">
+      <editorLayout>   edge-path [End]  x=360.0 y=290.0  </editorLayout>
+    </transition>
+    <assignee id="KT_UserGroup1" type="group"/>
+    <editorLayout>   node-size-and-position x=270.0 y=220.0 w=100.0 h=25.0  </editorLayout>
+  </state>
+  <state id="Approval_Step_2" name="Approval Step 2" discontinued="false">
+    <transition businessactionid="acn-0b0ed75b-02fa-4ce6-94a1-32cbb6311f69" businessconditionid="con-5ea03792-91a8-4174-8e62-9be3430324c7" event="Submit" target="End">
+      <editorLayout>   edge-path [End]  x=310.0 y=320.0  </editorLayout>
+    </transition>
+    <transition businessactionid="acn-e579c1b1-7380-46a0-af2b-8c62db739fc8" businessconditionid="con-ad4804db-91ff-4c5e-b238-7d5970b47bbd" event="Submit" target="End">
+      <editorLayout>   edge-path [End]  x=240.0 y=330.0  </editorLayout>
+    </transition>
+    <assignee id="KT_user_group2" type="group"/>
+    <editorLayout>   node-size-and-position x=220.0 y=280.0 w=100.0 h=25.0  </editorLayout>
+  </state>
+  <state id="Start" name="Start" discontinued="false">
+    <transition businessactionid="acn-2607e000-7b7f-4e83-8390-a8376982f022" event="Submit" target="Approval_Step_1"/>
+    <editorLayout>   node-size-and-position x=270.0 y=137.0 w=100.0 h=25.0  </editorLayout>
+    <onentry businessactionid="acn-2d08e805-6863-4eb9-8de4-7151502b730e"/>
+  </state>
+</scxml> -->
+            <BusinessRuleLink ID="AS_RBC"></BusinessRuleLink>
+            <SetupGroupLink SetupGroupID="KT_Workflow"></SetupGroupLink>
+            <Name>KT_WF</Name>
+            <ValidUserTypeLink UserTypeID="KTProducts"></ValidUserTypeLink>
+            <Configuration>H4sIAAAAAAAAAKWWXW/bNhSG7/MrOGG3jPklkRwsA12xDcUGdGhW7GIYDH4cORocSpDoOOmv37Fsp206x253Q4qEeM55Xz06ktvk7k1qc+syvE2vB8C5btx6hPnYr9u8gAcImww3YWj7/Ft712aIvw/tfbuGFYx1HjbHO9ftmCG9TW/u+m7IMLzv4/NgY3i4W9fzaSLtlHZdFzfZDbkgyd1BXfz6x/LPnwtyD8PYdqku2LUtCN6exrq4zbn/YTbbbrfXW3ndDauZYKycMT2bIhaL+XeUEkJSF4GO7QegLkXadyMm6hJ5qNk1I4/TuK0rZXC+rUttcSaULq7I3I1ju0oApI118X3YDAMkLC0/9ljaZoQBc8yONy2u8MSYUSSJ7Ri6lNu0ATw4SS6mGJ9p2y/OVin0vk4u9VQpZ2yqVJRPhZJ5l7Cy4ZH4zdgmGEcXdqd3KV1IVERmwLCSVqaSVIG31ERQVPOSl0x4LRnspByi7JSQeR5cOhRxImrFNDDGqPa6wahGUiMto85IXVkjGiZEQeAeY6LYjUdY0Ds3rADXr/p+6O7denmToV/yXfaPCRdX89nk5ORp0ya3Pu3pTykeHd1dnvez2vspS/atfgbFJfjIaXQK/RRVQ03FDWXRB8e0biIvv/DzK2Gazybdl1D13MuDG8dtstsm/HLShHjBmbNYRAAlFI+U6yagOaCprxwOovK20qAYmvN0FhXF9ngcF5RbE3WwikapKqoavHK+EmgwcuuaqGJlnqjaS4RTWInnWF0kwEcXwFhDG9Mw5BoH76SitmRRlMEaDvKEgFc3y3c/vn4q7x38A+ET6D/lE+IKaO/yLfkLt/8m6L88kCksOxj+ZfWfUYTd8T2C88vQbXp+RGm1Wz1n6ePb9FUsif9mSVzAkjhoMf+HJeYZRF16ykTjqApQUascp1IE7yvJeVPZF1gqwTGpraCWO0MV14oaQJasB6kkk0IFfbJDnXtY/NBGxOmHdVYf4OcmcM+plgZRqxx2z0Z4akIlIrZl2wTzgj4XlWEqetTXYAcOJeBbJg3VsbSaeaW9j9+qT6iDPnk5jLsutpz4E5fQON9/qBeH34F/ATkRwRh9CAAA</Configuration>
+            <LocalBusinessRule ID="acn-0b0ed75b-02fa-4ce6-94a1-32cbb6311f69" Scope="Local" Type="Action" RunPrivileged="true"><!-- Definition:
+Action #1 (JavaScriptBusinessActionWithBinds):
+<config>
+  <bindings>
+    <binding alias="node" type="Node" contract="CurrentObjectBindContract"/>
+  </bindings>
+  <messages/>
+  <javaScript>
+node.getValue("KT_Attribute1").setSimpleValue("The object is Rejected");
+  </javaScript>
+</config> -->
+                <Configuration>H4sIAAAAAAAAAIVSTU/DMAy971dEOUxwoGU3pH5M2wAJ0MS0FThWWet1mbI0JO4E/5606bpOaHBznu3n9xwrURVcpkwpwcGkfJNmpdzwIjQWwFi5tMOicPy1F+QA2vBSRnTk3VICMitzLouIviWPN3d0HA/CaWW4BGOWlYB4QEgHLBo60s876Ok+os/swFaZ5gqP+UmGdtAHx+2Uy9zQmsuyLZhme0ArwwF9iNRMrpok3woiurO0nmCy8FaorVAaDwUGZ06Gn1WJgbXjgpMn926MuXA8LDAY1AT1jDlTzZuQI0LsplCzDK0M1zGrtAaJr+sdZFiXzNqKdtZEcGbaWlnm0MKdoZlgpstXQrjI73T4fSGh3/VdWM2D1qWe292yAv5Y0f9Ep9+6zFL78QrAdyYquHLKX5J0gja/rhBGDrr2DOCK75WAfmWyBVI2ayPckCXUEeRtS/BLYQ9o7iL0z6/O3qV/fpjtjf8Aqt4JoAMDAAA=</Configuration>
+                <ValidObjectTypes AllObjectTypesValid="true"></ValidObjectTypes>
+            </LocalBusinessRule>
+            <LocalBusinessRule ID="acn-2607e000-7b7f-4e83-8390-a8376982f022" Scope="Local" Type="Action" RunPrivileged="true"><!-- Definition:
+Action #1 (JavaScriptBusinessActionWithBinds):
+<config>
+  <bindings>
+    <binding alias="node" type="Node" contract="CurrentObjectBindContract"/>
+  </bindings>
+  <messages/>
+  <javaScript>
+node.getValue("KT_Attribute1").setSimpleValue("Submitted from Start");
+  </javaScript>
+</config> -->
+                <Configuration>H4sIAAAAAAAAALVTTU/DMAy971dEPUzsQMtuSP2YtgESHxOIFjhOaeuVTGlaEmcCfj1p03Wd0CQu3Oxn5/nZsWuuCybWtK45A7Vmm3VWiQ0rAmUAjGobtlgYzD5LTnYgFatE6EzdC4eAyKqciSJ0XpKb80tnFo2ChVZMgFLPmkM0IqQHnlo6Moxb6PYqdO7ojsaZZDXu4/MMTaE3hu8LJnLlNFyG7YlKWgIaGRYYQqRhstkk+aohdLaG1uVUFG6M0gh1ojFH/6iT8Yeu0DftWOPQk/Xbxqw5GxfojxqCpsaK1q1PyB4hZlIoaYZGhn2x1FKCwMd0Cxk2Kcsuo6s154yqLldUOXRw39CSU9XHNefW8nod3lBI4PXvTozmWspKrsxsaQH/PaKHKqOcfdOUQ1cxgbLmFGGhRc7B+6Pmw2KcFtyMzi0AXynXcGaV3CfrOZp4qhGmFpq4CjBmRgUMM2OdlgwRcrKRVUlipLL7n4n/S98AaBcw8I7X2xyAd3wB3TH9AOQg/6VsAwAA</Configuration>
+                <ValidObjectTypes AllObjectTypesValid="true"></ValidObjectTypes>
+            </LocalBusinessRule>
+            <LocalBusinessRule ID="acn-2d08e805-6863-4eb9-8de4-7151502b730e" Scope="Local" Type="Action" RunPrivileged="true"><!-- Definition:
+Action #1 (JavaScriptBusinessActionWithBinds):
+<config>
+  <bindings>
+    <binding alias="node" type="Node" contract="CurrentObjectBindContract"/>
+    <binding alias="workflow" type="Workflow" contract="CurrentWorkflowBindContract"/>
+  </bindings>
+  <messages/>
+  <javaScript>
+node.getWorkflowInstance(workflow).getTaskByID("Start").triggerLaterByID("Submit", "Auto Submited");
+  </javaScript>
+</config> -->
+                <Configuration>H4sIAAAAAAAAAJVTXW/CIBR991cQHowmW7u9LbGt8WNLXGZmpouPBltkKEIHVOe/HxSsNYtzeyo993AO58LNWUEoX6A8ZxSrBV0tUsFXlETKADrJXdlhcdT92jKww1JRwWN4H9xBgHkqMspJDN9nT7cPsJs0on6hKMdKvRUMJw0AKmBSyoF63UGjYQyf0Q5NU0lzfaz3Um2M5lR/9CnPFLRaRm2CJNpibY7hgDoErJJjg9khxzFcG9mAIU6CqZbmoDBpMt05S9L8LITumDhuccrk/stgbtltEt1pWAHrMUZ5+Q/AEQGmU1qiVJtjuB2DQkrM9etyjVNtKQPP8F49RpHyXC4y7OEq0IAhVdULxtwq/KvvXMjNion9Fee9p/3H3XqH9TZEYbXvwsU8Sink2NwsIviXC7oudHorl1VsNwOCqxaMuNKIp7h1DNu21RlSm/5hNGy5aFONpG9QOzBChGD5goxtnVMst9STboD79gotgCvgzO/v/MhRA8q3G4Xnk2FmJzwfHj+H3yu4DGenAwAA</Configuration>
+                <ValidObjectTypes AllObjectTypesValid="true"></ValidObjectTypes>
+            </LocalBusinessRule>
+            <LocalBusinessRule ID="acn-bdace898-f8f0-4ef0-ba34-950d25c981e3" Scope="Local" Type="Action" RunPrivileged="true"><!-- Definition:
+Action #1 (JavaScriptBusinessActionWithBinds):
+<config>
+  <bindings>
+    <binding alias="node" type="Node" contract="CurrentObjectBindContract"/>
+  </bindings>
+  <messages/>
+  <javaScript>
+node.getValue("KT_Attribute1").setSimpleValue("Rejected");
+  </javaScript>
+</config> -->
+                <Configuration>H4sIAAAAAAAAAIVSy07DMBC89yssHyo4kNAbUh5VW0ACVFHRAsfITbbBlesYe13B3+PEaZoKFW727Hh2Zr1K2JLLjCklOJiMb7K8khtexsYBmCpf9lgSj792guxBG17JhI6Ca0pA5lXBZZnQ19X91Q0dp4N4ag2XYMyLFZAOCOmARSNH+nUPPdwm9JHt2TLXXOGhPsnRNXrn+DHlsjC01nJqC6bZDtDZ8EAfIrWSZ5PVt4KEbp1sIJgsgyVqZ5SmQ4HRSZLhp60wcnH84ZjJ35tg/jgelhgNaoG6x5yp5k7IASFuUqhZjs6GfzGzWoPE5/UWcqwps5bR9poIzkzLlVUBLdwFmglmuroVwp/CzkfYNxKH3bszo7nTutJzN1tWwh8j+l/o+FvnVeo8QQn4xoSFC+/8aZVN0NXXFmHkocvAAC75TgnoM1+gHhkULSn65akHNJsQh6d75jYxPF3Fdqt/AA/Df2f1AgAA</Configuration>
+                <ValidObjectTypes AllObjectTypesValid="true"></ValidObjectTypes>
+            </LocalBusinessRule>
+            <LocalBusinessRule ID="acn-c413ebd1-da43-426f-8618-0dbca077fd15" Scope="Local" Type="Action" RunPrivileged="true"><!-- Definition:
+Action #1 (RemoveObjectFromWorkflowAction):
+Workflow=
+Message=Workflow Ended
+ -->
+                <Configuration>H4sIAAAAAAAAAHWQwYrCMBRF935FePtpnZ2LpKKo4GIYUYdZlti+hnTSJCRpR//eaFUq4vY83rmXa1UrpM65tUqiz2WVF0ZXUlAfQchsf+4Zo9Njo0iHzkujGXwmYyCoC1NKLRj87FcfE5hmIzpvvdTo/bZVmI0IeYDNVUeG9x6tFwy22JgOvw81FmHlTPNr3F+lzP+sCDEOLqKo2nDHGwyxQw+GiFw09zcg+5NFBjXveKK4FskuuFgUMpo+Pt44vmI5LvC94h5ClrrE8kU4ANeaNH1eIG6UPo902/sMYDZsgY8BAAA=</Configuration>
+                <ValidObjectTypes AllObjectTypesValid="true"></ValidObjectTypes>
+            </LocalBusinessRule>
+            <LocalBusinessRule ID="acn-dee4241d-17fc-42e7-b6a7-b26b967e4015" Scope="Local" Type="Action" RunPrivileged="true"><!-- Definition:
+Action #1 (JavaScriptBusinessActionWithBinds):
+<config>
+  <bindings>
+    <binding alias="node" type="Node" contract="CurrentObjectBindContract"/>
+  </bindings>
+  <messages/>
+  <javaScript>
+node.getValue("KT_Attribute1").setSimpleValue("Approved");
+  </javaScript>
+</config> -->
+                <Configuration>H4sIAAAAAAAAAIVSy07DMBC89yssHyo4kNAbUh5VWkACVFHRAsfKTbbBlesYe13B3+PEaZoKFW727Hh2Zr1K2JLLFVNKcDArvlnlldzwMjYOwFT5sseSePy1E2QP2vBKJnQUXFMCMq8KLsuEvi7vr27oOB3EE2u4BGNerIB0QEgHzBs50q976OE2oY9szxa55goP9SxH1+id48eEy8LQWsupzZlmO0BnwwN9iNRKnk2W3woSunWygWCyDBaonVGaDgVGJ0mGn7bCyMXxh2Mmf2+C+eN4WGI0qAXqHjOmmjshB4S4SaFmOTob/sXUag0Sn9dbyLGmTFtG2ysTnJmWK6sCWrgLNBXMdHUrhD+FnY+wbyQOu3dnRnOndaVnbrashD9G9L/Q8bfOq9R5ghLwjQkLF97503KVoauvLcLIQ5eBAVzwnRLQZ2ZK6WoPRUuKfnnqAc0mxOHpnrlNDE9Xsd3qH8ouqJ71AgAA</Configuration>
+                <ValidObjectTypes AllObjectTypesValid="true"></ValidObjectTypes>
+            </LocalBusinessRule>
+            <LocalBusinessRule ID="acn-e579c1b1-7380-46a0-af2b-8c62db739fc8" Scope="Local" Type="Action" RunPrivileged="true"><!-- Definition:
+Action #1 (JavaScriptBusinessActionWithBinds):
+<config>
+  <bindings>
+    <binding alias="node" type="Node" contract="CurrentObjectBindContract"/>
+  </bindings>
+  <messages/>
+  <javaScript>
+node.getValue("KT_Attribute1").setSimpleValue("The object is Approved");
+  </javaScript>
+</config> -->
+                <Configuration>H4sIAAAAAAAAAIVSTU/DMAy971dEOUxwoGU3pH5M3QAJ0ARiBY5V1npdpiwNiTvBvydtuq4TGtycZ/v5PcdK1CWXGVNKcDAZX2d5Jde8DI0FMFYu7bAonH7tBNmDNrySEZ1415SAzKuCyzKib+n91Q2dxqNwVhsuwZjXWkA8IqQHXlo6Msw76OE2oo9sz5a55goP+SRHO+iD42bGZWFow2XZXphmO0ArwwFDiDRMrpqk3woiurW0nmCy9JaorVAajwUGJ07Gn3WFgbXjgqMn926NuXA6LjEYNQTNjAVT7ZuQA0LsplCzHK0M1zGvtQaJz6st5NiUzLuKblYiODNdrawK6ODe0Fww0+drIVzk9zr8oZDQ7/vOrOZO60ov7G5ZCX+s6H+i42+dZ2n8eCXgOxM1XDjlT2mWoM2vaoSJgy49A7jkOyVgWJlugFTt2gg3JFFKV3soupbgl8IB0N5F6J9enb1L//Qwuxv/AW8z3lkDAwAA</Configuration>
+                <ValidObjectTypes AllObjectTypesValid="true"></ValidObjectTypes>
+            </LocalBusinessRule>
+            <LocalBusinessRule ID="con-198d7c94-d346-4f94-ab62-864ebafd4d68" Scope="Local" Type="Condition" RunPrivileged="false"><!-- Definition:
+Condition #1 (JavaScriptBusinessConditionWithBinds):
+<config>
+  <bindings>
+    <binding alias="node" type="Node" contract="CurrentObjectBindContract"/>
+    <binding alias="step" type="Manager" contract="ManagerBindContract"/>
+  </bindings>
+  <messages/>
+  <javaScript>
+var categoryRefObject = node.getReferences(step.getReferenceTypeHome().getReferenceTypeByID("New_ref_type"));
+logger.info("categoryRefObject :::"+ categoryRefObject);
+for(var i = 0 ; i < categoryRefObject.size() ; i++){
+	var target = categoryRefObject.get(i).getValue("KT_Attribute1").getSimpleValue();
+	logger.info("target ::: "+target);
+}
+if(target == "yes")
+{
+	return true
+}
+else
+{
+	return "Please end the process";
+}
+  </javaScript>
+</config> -->
+                <Configuration>H4sIAAAAAAAAALVU0W7TMBR9Xr7CykOVqiLZ3lDbtFo7EAMK1VrgMXKTm8yTawfbKXSIf+c6drtW0TR44CnOucfnnuNrueZNxURG65oz0Bkrs1yKklVjjYCZ1K7ssHQ8/bnlZAdKMynS8Cq+DAmIXBZMVGn4Zf321etwOgnGs0YzAVrfNRwmASFHYNnKkdO6g25v0vA93dFVrlhtDvW5FAUz2OsbM/czJgodWjkUXFJFt2DQiQNOIWLFHJus9zWk4QMqx5yKKl4ZhV7DSY+b0VmY3vdGmhEmcounWO6/zeaW015lRoEVsD0WtG7/CTkgBA/LKJobtOF2zBulQJjPmwfIjaXMPcP3uuaMas8VsgAPHwPNOdXHesO5WyUv9l1QQStQL3TUBup/6Wj7JafRx8lx3zPDeKOUVAscKNr530P5KHPK2SPdcPAd17CtOTUwa0TBIflLz0+38XnDO6pIjsqVVPs7KN2ASUrsEOMKDGKAk89BR/aUzyCr+U5uIep34Nn+9iZyuT7Bj0xBmRmEHdLvjwIuK5xrzEQpPa/rYjgcutKgaxElSqkia5+h3Usywq89vC411uwRPVrGYND/FVzYTYYq9Iw7u3TEI9ZG+kp5A97eh3V2bfDQNo2BK5/DclYMRwOOiaYuusF8K0xDfByHIPt3wMroYCX15T1orx+gWQWmUYIY1QDSgWs4QR1vyYFqwKtVEHMPpFYSx+U1bI/uVTkB2tdnnJw/b/gAJucvoH9M/wAQvNGVbAUAAA==</Configuration>
+                <ValidObjectTypes AllObjectTypesValid="true"></ValidObjectTypes>
+            </LocalBusinessRule>
+            <LocalBusinessRule ID="con-5ea03792-91a8-4174-8e62-9be3430324c7" Scope="Local" Type="Condition" RunPrivileged="true"><!-- Definition:
+Condition #1 (JavaScriptBusinessConditionWithBinds):
+<config>
+  <bindings>
+    <binding alias="node" type="Node" contract="CurrentObjectBindContract"/>
+  </bindings>
+  <messages/>
+  <javaScript>
+var value = node.getValue("KT_Attribute2").getSimpleValue();
+if(value == "No")
+{
+	return true;
+}
+  </javaScript>
+</config> -->
+                <Configuration>H4sIAAAAAAAAAIVSwU7DMAw906+Iepi2Ay1wQmq7aSsgARpMbMCxylqvZMrSkjgTCPHvpE3XdUKDm/388uznuOQ6ZyKhZckZqIStkrQQK5aHygA4LG3ZYlE4+thwsgWpWCEi99w7cwmItMiYyCP3eXFzeumOhk440YoJUOpJcxg6hLTArJYj3bqFbq8i945u6TyVrMRdPS5ExtD0emX4NmEiU24lZwRnVNINoJnEAl2IVGKWTRafJUTu2ih7nIrcm6M0s7rDHsfgwEzvXRcYGEc22Nuyee3NhqNejoFTCVQ9prSsc0J2CDHLQklTNGPYF7GWEgQ+LteQYkWJG0bTa8wZVQ1XFBk0cGso5lS1dc25jfx2Dr87SOi3746s5lrKQk7NemkOf6zof6H9hx1X2VJJtpRrIBGpvHk54EuV962L+0UyRsNdaoQLCw0qzpxtSg6WOQgctuo3KhGxrIeiYTtfzokE1FIQlBoC5/v3DjpAfTChf3iR5mb9w6Nt7v8HAhPvQR8DAAA=</Configuration>
+                <ValidObjectTypes AllObjectTypesValid="true"></ValidObjectTypes>
+            </LocalBusinessRule>
+            <LocalBusinessRule ID="con-ad4804db-91ff-4c5e-b238-7d5970b47bbd" Scope="Local" Type="Condition" RunPrivileged="true"><!-- Definition:
+Condition #1 (JavaScriptBusinessConditionWithBinds):
+<config>
+  <bindings>
+    <binding alias="node" type="Node" contract="CurrentObjectBindContract"/>
+    <binding alias="step" type="Manager" contract="ManagerBindContract"/>
+    <binding alias="logger" type="Logger" contract="LoggerBindContract"/>
+  </bindings>
+  <messages/>
+  <javaScript>
+var categoryRefObject = node.getReferences(step.getReferenceTypeHome().getReferenceTypeByID("New_ref_type"));
+logger.info("categoryRefObject :::"+ categoryRefObject);
+for(var i = 0 ; i < categoryRefObject.size() ; i++){
+	var target = categoryRefObject.get(i).getValue("KT_Attribute1").getSimpleValue();
+	logger.info("target ::: "+target);
+}
+if(target == "yes")
+{
+	return true
+}
+else
+{
+	return "Please end the process";
+}
+  </javaScript>
+</config> -->
+                <Configuration>H4sIAAAAAAAAALVU0W7aMBR9br7CygMKQiPt2wQEVOimdSsbKmx7jExyk7oydmY7bHTav+86NhQUVWzS9oRz7vE559oXV7wumUhpVXEGOmVFmklRsHKkETDjypUdlowmPzacbEFpJkUSXvUvQwIikzkTZRJ+Xr199TqcjIPRtNZMgNb3NYdxQMgBWDRy5LjuoNubJHxPt3SZKVaZfX0mRc4Men1l5mHKRK5DK4eCC6roBgwmccAxRKyYY5PVroIkfETlPqei7C+NwqzhuMPN8KSZzrdamiF25BbPbbnvpje3nHRKMwysgPWY06r5JmSPEDwso2hmMIbbMauVAmE+rR8hM5Yy8wzvdc0Z1Z4rZA4ePjQ041Qf6jXnbhWf9Z1TQUtQZxy1gepfOd7J8rwhb0h/Y2kN4+PTHsWHfS/c/xulpJrjDOEJ/O85uJMZ5eyJrjl4xxVsKk4NTGuRc4j/MPPzH+DlwFuqSIbKpVS7eyjcTJGE2Lnpl2AQAxy2DHRkL/YEsprv5Aaibgue7m5vItfXR/ieKihSg7BDut1h4C6tz0QhPa+dYjAYuFKvHRElCqkiG59h3EsyxF97eG1qX7MnzGgZvV73Z3BhNxmqMDPubNMRj1jT0hfKa/DxPqzSa4OHtq4NXPk+LGfJ8GrAMTHURbsxb4XdEN+OQ5D9K2BFtI+S+PIOtNcPMKwCUytBjKoB6cA1HKGOt+BANeBo5cQ8AKmUxOvyGujRGpQjoHnuRvHpe4ovbnz65PrX+zdRmwvK3QUAAA==</Configuration>
+                <ValidObjectTypes AllObjectTypesValid="true"></ValidObjectTypes>
+            </LocalBusinessRule>
+        </STEPWorkflow>
+    </STEPWorkflows>
+</STEP-ProductInformation>
