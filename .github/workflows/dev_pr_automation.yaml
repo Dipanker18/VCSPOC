@@ -25,7 +25,7 @@ jobs:
           run: |
            cd repo
            git checkout ${{github.head_ref}}
-           git diff --diff-filter=ACMRT ${{github.base_ref}} ../changes.patch
+           git diff --diff-filter=ACMRT origin/${{github.base_ref}} ../changes.patch
            grep '^diff --git' ../changes.patch | awk '{ sub(/^a\//,"",$3); print $3 }'
 
         - name: applying patch to base
