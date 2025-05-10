@@ -26,7 +26,7 @@ jobs:
         - name: get diff from base
           run: |
            cd source
-           git fetch origin ${{ github.base_ref }} --depth=0
+           git fetch --depth=0 origin ${{ github.base_ref }} 
            git diff --diff-filter=ACMRT  origin/${{ github.base_ref }}...HEAD > ../changes.patch
            grep '^diff --git' ../changes.patch | awk '{ sub(/^a\//,"",$3); print $3 }'
 
