@@ -14,12 +14,14 @@ jobs:
           with:
             ref: ${{ github.head_ref }}
             path: source
+            fetch-depth: 0
 
         - name: checkout base
           uses: actions/checkout@v4
           with:
             ref: ${{ github.base_ref }}
             path: base
+            fetch-depth: 0
 
         - name: get diff from base
           run: |
