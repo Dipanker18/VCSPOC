@@ -25,7 +25,7 @@ jobs:
           run: |
            cd source
            git config --global --add safe.directory $(pwd)
-           git diff --diff-filter=ACMRT ../${{ github.base_ref }} > ../changes.patch
+           git diff --diff-filter=ACMRT ../base/${{ github.base_ref }} > ../changes.patch
            grep '^diff --git' ../changes.patch | awk '{ sub(/^a\//,"",$3); print $3 }'
 
         - name: applying patch to base
