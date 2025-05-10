@@ -1,0 +1,47 @@
+name: Sync Dev PRs
+
+on:
+    pull_request:
+        types: [opened, reopened, synchronize]
+
+jobs:
+    PR_maintainence:
+        runs-on: ubuntu-latest
+
+        steps:
+        - name: checkout source
+          uses: actions/checkout@v4
+          with:
+            ref: ${{ github.head_ref }}
+            path: source
+            fetch-depth: 0
+
+        - name: checkout base
+          uses: actions/checkout@v4
+          with:
+            ref: ${{ github.base_ref }}
+            path: base
+            fetch-depth: 0
+
+        - name: get diff from base
+          run: |
+           cd source
+           git fetch origin "${{ github.base_ref }}" 
+           git diff --diff-filter=ACMRT  origin/"${{ github.base_ref }}"...HEAD > ../changes.patch
+           grep '^diff --git' ../changes.patch | awk '{ sub(/^a\//,"",$3); print $3 }'
+
+        - name: applying patch to base
+          run: |
+           cd base
+           cat ../changes.patch
+           git apply ../changes.patch
+
+        - name: commit and push (PR cleanup)
+          run: |
+           cd base
+           git add .
+           git commit -m "Apply clean patch" || echo "No Changes"
+           git push origin HEAD:"${{ github.head_ref }}""
+          
+
+            
