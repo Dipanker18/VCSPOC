@@ -13,31 +13,33 @@ jobs:
           uses: actions/checkout@v4
           with:
             ref: ${{ github.head_ref }}
-            path: source
+            path: repo
 
         - name: checkout base
           uses: actions/checkout@v4
           with:
             ref: ${{ github.base_ref }}
-            path: base
+            path: repo
 
         - name: get diff from base
           run: |
-           cd source
-           git config --global --add safe.directory $(pwd)
-           git diff --diff-filter=ACMRT ../base > ../changes.patch
+           cd repo
+           git checkout ${{github.head_ref}}
+           git diff --diff-filter=ACMRT ${{github.base_ref}} ../changes.patch
            grep '^diff --git' ../changes.patch | awk '{ sub(/^a\//,"",$3); print $3 }'
 
         - name: applying patch to base
           run: |
-           cd base
+           cd repo
+           git checkout ${{github.base_ref}}
            git config user.name "Dipanker18"
            git config user.email "dipanker.das@cognizant.com"
            git apply  ../changes.patch
 
         - name: commit and push (PR cleanup)
           run: |
-           cd base
+           cd repo
+           git checkout ${{github.base_ref}}
            git add .
            git commit -m "Apply clean patch" || echo "No Changes"
            git push origin HEAD:${{ github.head_ref }}
