@@ -33,8 +33,6 @@ jobs:
         - name: applying patch to base
           run: |
            cd base
-           git config user.name "Dipanker18"
-           git config user.email "dipanker.das@cognizant.com"
            git apply ../changes.patch
 
         - name: commit and push (PR cleanup)
