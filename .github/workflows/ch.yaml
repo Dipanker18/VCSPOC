@@ -1,0 +1,16 @@
+name: Upload Changes
+
+on:
+    push:
+        branches:
+            - developement_base
+
+jobs:
+    Server_Upload:
+        runs-on: ubuntu-latest
+
+        steps:
+        - name: execute upload script
+          run: |
+           chmod +x ./script/change.sh
+           ./script/change.sh
