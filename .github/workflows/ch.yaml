@@ -12,6 +12,8 @@ jobs:
         steps:
         - name: checkout
           uses: actions/checkout@v4
+          with:
+            fetch-depth: 0
         - name: execute upload script
           run: |
            chmod +x ./script/change.sh

@@ -1,14 +1,5 @@
 #!/bin/bash
 
-# #Update and install zip
-# sudo apt update
-# sudo apt install zip
-
-# Fetch latest info
-git fetch origin developement_base
-git checkout developement_base
-git pull origin developement_base
-
 changed_file=$(git diff --name-only HEAD^1 HEAD)
 for file in $changed_file; do
     mkdir -p "changed_files/$(dirname "$file")"
