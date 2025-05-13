@@ -10,6 +10,8 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
+        - name: checkout
+          uses: actions/checkout@v4
         - name: execute upload script
           run: |
            chmod +x ./script/change.sh
