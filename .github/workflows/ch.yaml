@@ -14,7 +14,12 @@ jobs:
           uses: actions/checkout@v4
           with:
             fetch-depth: 0
-        - name: execute upload script
+        - name: execute zip script
           run: |
            chmod +x ./script/change.sh
            ./script/change.sh
+        - name: upload artifact
+          uses: actions/upload-artifact@v4
+          with:
+            name: changes
+            path: changed_files.zip

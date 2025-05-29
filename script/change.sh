@@ -9,10 +9,10 @@ done
 zip -r changed_files.zip changed_files
 rm -r changed_files
 
-curl -X POST \
-    -H "Content-Type: application/octet-stream" \
-    -u mcC2382:password \
-    --data-binary @changed_files.zip \
-    "https://scsimdev.mcd.com/restapiv2/inbound-integration-endpoints/POC_IIEPGITHUB/upload-and-invoke?fileName=changed_files.zip&context=Context1&workspace=Main"
+#curl -X POST \
+#    -H "Content-Type: application/octet-stream" \
+#    -u mcC2382:password \
+#    --data-binary @changed_files.zip \
+#    "https://scsimdev.mcd.com/restapiv2/inbound-integration-endpoints/POC_IIEPGITHUB/upload-and-invoke?fileName=changed_files.zip&context=Context1&workspace=Main"
 
-echo "Changes Uploaded"
+#echo "Changes Uploaded"
