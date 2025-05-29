@@ -7,7 +7,7 @@ for file in $changed_file; do
 done
 
 zip -r changed_files.zip changed_files
-rm -r changed_files
+#rm -r changed_files
 
 #curl -X POST \
 #    -H "Content-Type: application/octet-stream" \
